@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.8.11)
+cmake_minimum_required(VERSION 3.5)
 include(CheckIncludeFiles)
 
 project(brisk)
@@ -8,6 +8,11 @@ set(BRISK_MINOR_VERSION 0)
 set(BRISK_PATCH_VERSION 2)
 set(BRISK_VERSION
   ${BRISK_MAJOR_VERSION}.${BRISK_MINOR_VERSION}.${BRISK_PATCH_VERSION})
+
+## Add support for C++11
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED YES)
+set(CMAKE_CXX_EXTENSIONS NO) # use -std=c++11 instead of -std=gnu++11
 
 # Offer the user the choice of overriding the installation directories
 set(INSTALL_LIB_DIR lib CACHE PATH "Installation directory for libraries")
